@@ -1,7 +1,7 @@
 var mongoDbConnection = require('../lib/connection.js');
 var ObjectID = require('mongodb').ObjectID;
 
-module.exports = function findTeam(name, callback) {
+module.exports = function findTeam(name, res, callback) {
     mongoDbConnection(function (databaseConnection) {
         var teamQuery = {name:name, type:'team'};
         databaseConnection.collection("teams").findOne(teamQuery, function(err, result) {

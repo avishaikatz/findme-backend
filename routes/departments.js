@@ -6,7 +6,7 @@ var findTeam = require('../modules/findTeam.js');
 
 router.get('/', function(req, res, next) {
     var name = req.query.name;
-    findDepartment(name, function (teams) {
+    findDepartment(name, res, function (teams) {
         var roomPromises = teams.map(function (team) {
             var teamName = team['name'];
             return new Promise(resolve =>

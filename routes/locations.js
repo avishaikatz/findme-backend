@@ -6,7 +6,7 @@ var findLocation = require('../modules/findLocation.js');
 router.get('/', function(req, res, next) {
     var name = req.query.name;
     var type = req.query.type;
-    findLocation(name, type, function (location) {
+    findLocation(name, type, res, function (location) {
         res.send(location);
     })
 });

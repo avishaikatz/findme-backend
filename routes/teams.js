@@ -5,7 +5,7 @@ var findTeams = require('../modules/findTeam.js');
 
 router.get('/', function(req, res, next) {
     var name = req.query.name;
-    findTeams(name, function (teamLocation) {
+    findTeams(name, res, function (teamLocation) {
         res.send(teamLocation);
     });
 });
