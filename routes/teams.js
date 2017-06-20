@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-var findTeams = require('../modules/findTeam.js');
+var findTeam = require('../modules/findTeam.js');
 
 router.get('/', function(req, res, next) {
     var name = req.query.name;
-    findTeams(name, res, function (teamLocation) {
-        res.send(teamLocation);
+    findTeam(name, res, function (teamLocation) {
+        res.send([teamLocation]);
     });
 });
 
